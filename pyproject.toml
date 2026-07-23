@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-guardrails"
+version = "0.1.0"
+description = "Lightweight, dependency-free prompt-injection detection and output guardrails for LLM applications"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "eris03" }]
+keywords = ["llm", "security", "prompt-injection", "jailbreak", "guardrails", "ai-safety"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Topic :: Security",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+guardrails = "guardrails.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["guardrails*"]
